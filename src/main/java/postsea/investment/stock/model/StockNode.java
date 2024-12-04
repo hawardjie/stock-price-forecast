@@ -1,15 +1,15 @@
 package postsea.investment.stock.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class StockNode {
     double price;
-    Date timestamp;
+    LocalDate timestamp;
     List<Edge> edgeList;
 
-    public StockNode(double price, Date timestamp) {
+    public StockNode(double price, LocalDate timestamp) {
         this.price = price;
         this.timestamp = timestamp;
         this.edgeList = new ArrayList<>();

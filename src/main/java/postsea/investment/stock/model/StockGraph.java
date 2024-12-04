@@ -1,7 +1,7 @@
 package postsea.investment.stock.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class StockGraph {
@@ -13,7 +13,7 @@ public class StockGraph {
         this.windowSize = 5;
     }
 
-    public void addNode(double price, Date timestamp) {
+    public void addNode(double price, LocalDate timestamp) {
         StockNode node = new StockNode(price, timestamp);
         this.nodes.add(node);
 

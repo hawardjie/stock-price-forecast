@@ -11,8 +11,7 @@ import javafx.stage.Stage;
 import postsea.investment.stock.model.StockGraph;
 import postsea.investment.stock.model.StockNode;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class StockForecastApplication extends Application {
     @Override
@@ -21,12 +20,12 @@ public class StockForecastApplication extends Application {
         StockGraph stockGraph = new StockGraph();
 
         // Sample historical data
-        stockGraph.addNode(100, new Date(2024, Calendar.JANUARY, 1));
-        stockGraph.addNode(102, new Date(2024, Calendar.JANUARY, 2));
-        stockGraph.addNode(101, new Date(2024, Calendar.JANUARY, 3));
-        stockGraph.addNode(103, new Date(2024, Calendar.JANUARY, 4));
-        stockGraph.addNode(105, new Date(2024, Calendar.JANUARY, 5));
-        stockGraph.addNode(104, new Date(2024, Calendar.JANUARY, 6));
+        stockGraph.addNode(100, LocalDate.of(2024, 1, 1));
+        stockGraph.addNode(102, LocalDate.of(2024, 1, 2));
+        stockGraph.addNode(101, LocalDate.of(2024, 1, 3));
+        stockGraph.addNode(103, LocalDate.of(2024, 1, 4));
+        stockGraph.addNode(105, LocalDate.of(2024, 1, 5));
+        stockGraph.addNode(104, LocalDate.of(2024, 1, 6));
 
         double predictedPrice = stockGraph.predictNextPrice();
         double accuracy = stockGraph.calculateAccuracy();
