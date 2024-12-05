@@ -35,12 +35,12 @@ class Table implements Serializable {
     }
 }
 
-public class PsSQL {
+public class RelationalDB {
     private final String dbName;
     private final Map<String, Table> tables;
     private final Path dbPath;
 
-    public PsSQL(String dbName) {
+    public RelationalDB(String dbName) {
         this.dbName = dbName;
         this.tables = new HashMap<>();
         this.dbPath = Paths.get(System.getProperty("user.dir"), dbName + ".dat");
