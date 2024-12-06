@@ -35,7 +35,7 @@ class Table implements Serializable {
     }
 }
 
-public class RelationalDB {
+public class RelationalDB implements Serializable {
     private final String dbName;
     private final Map<String, Table> tables;
     private final Path dbPath;

@@ -4,13 +4,18 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import postsea.database.RelationalDB;
+
 public class StockGraph {
-    List<StockNode> nodes;
-    int windowSize;
+    private List<StockNode> nodes;
+    private int windowSize;
+    private final RelationalDB db;
 
     public StockGraph() {
         this.nodes = new ArrayList<>();
         this.windowSize = 5;
+        this.db = new RelationalDB("InvestmentDB");
+        db.init().join(); // Initialize database
     }
 
     public void addNode(double price, LocalDate timestamp) {
