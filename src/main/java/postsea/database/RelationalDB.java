@@ -6,36 +6,8 @@ import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
-class FieldSchema implements Serializable {
-    private static final long serialVersionUID = 1L;
-    String type;
-    boolean required;
-
-    public FieldSchema(String type, boolean required) {
-        this.type = type;
-        this.required = required;
-    }
-
-    @Override
-    public String toString() {
-        return "{\"type\":\"" + type + "\",\"required\":" + required + "}";
-    }
-}
-
-class Table implements Serializable {
-    private static final long serialVersionUID = 2L;
-    Map<String, FieldSchema> schema;
-    List<Map<String, Object>> data;
-    int autoIncrement;
-
-    public Table(Map<String, FieldSchema> schema) {
-        this.schema = schema;
-        this.data = new ArrayList<>();
-        this.autoIncrement = 1;
-    }
-}
-
 public class RelationalDB implements Serializable {
+    private static final long serialVersionUID = 3L;
     private final String dbName;
     private final Map<String, Table> tables;
     private final Path dbPath;
